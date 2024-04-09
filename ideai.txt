@@ -1,0 +1,1 @@
+Criar containeres separados para cada empresa utilizando nosso sistema ERP, usaremos serveless como método a ser implementado.
