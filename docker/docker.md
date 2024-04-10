@@ -5,17 +5,17 @@
 docker run -d -p 8800:80 httpd
 ```
 
-<b>Para carregar á página carregada pela imagem</b>
+<b>To show images loaded from the container</b>
 ```
 curl localhost:8800
 ```
 
-<b>Para mostrar os containeres em execução</b>
+<b>To show running containers</b>
 ```
 docker ps
 ```
 
-<b>Para verificar as portas em uso</b></br>
+<b>To check the ports in use</b></br>
 <i>Mac:</i> 
 ```
 lsof -i :<port>
