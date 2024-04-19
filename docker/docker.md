@@ -115,3 +115,43 @@ Para eu acessar as informações formatadas do container
 ```
 docker container inspect --format '{{ .NetworkSettings.IPAddress }}' {name_container}
 ```
+
+## Docker Networks - CLI management
+O uso de networks em docker nos permite criar redes virtuais isoladas, podemos criar nossa propria rede virtual e incluido comunicação com outros containeres dentro da rede que nos especificamos.
+exemplo:
+```
+para criar a network
+docker network create --driver bridge minha_rede
+
+criado container e incluido o network nele
+docker run -d --name meu-redis --network minha_rede redis
+```
+
+Verificar as Networks
+```
+docker network ls
+```
+
+inspect nas Networks
+```
+docker network inspect {nome da network}
+```
+
+Para criar uma nova rede virtual com drive especificado
+```
+docker network create --driver
+```
+
+Para conectar ou desconectar
+```
+docker network connect/disconnect
+```
+
+Quando criamos uma nova rede virtual, la recebe um recurso que criar DNS automatico para cada container, fazendo com que mesmo que altere o IP ambos os containeres dentro dessa rede mantenha-se conectados
+Para ativar o DNS na rede padrão
+```
+docker network --link
+```
+
+## Links for documentation
+para fazer um format no inspect => https://docs.docker.com/config/formatting/ </br>
