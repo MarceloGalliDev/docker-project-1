@@ -155,3 +155,13 @@ docker network --link
 
 ## Links for documentation
 para fazer um format no inspect => https://docs.docker.com/config/formatting/ </br>
+
+## Create a docker image in my repository
+usamos o comando para copiar e nomear uma tag
+```
+docker image tag {repositorio}/{nome_tag_original} {repositorio}/{nome_tag_atualizado} 
+```
+
+
+## Reference dockerfile
+https://docs.docker.com/reference/dockerfile/
