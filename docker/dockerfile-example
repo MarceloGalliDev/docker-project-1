@@ -1,0 +1,36 @@
+FROM node?6-alpine
+
+# expondo a porta
+EXPOSE 3000
+
+RUN apk add --update tini
+
+# criando o diretorio
+RUN mkdir -p usr/src/app
+
+# indicando a pasta de trabalho onde se encontra os arquivos do app
+WORKDIR /usr/src/app
+
+# copiando o arquivo origem para destino
+COPY package.json package.json
+
+# executando comando no terminal
+RUN npm install && npm cache clean
+
+# copiando os arquivos da base para base do docker
+COPY . .
+
+# buildando a imagem, posso indicar os comando no ENTRYPOINT também, assim aqui so indico o parametro
+CMD [ "tini", "--", "node", "./bin/www" ]
+
+# executamos o comando do build
+# docker build -t testnode
+
+# executamos o comando de run
+# docker container run --rm -p 80:3000 testnode
+
+# para eu subir a minha imagem, criaremos um tag
+# docker tag testnode marcelogalli/testing-node
+
+# depois executamos um push
+# docker push marcelogalli/testing-node
