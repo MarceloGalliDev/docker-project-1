@@ -9,6 +9,9 @@ RUN apk add --update tini
 RUN mkdir -p usr/src/app
 
 # indicando a pasta de trabalho onde se encontra os arquivos do app
+# O comando WORKDIR em um Dockerfile é bastante útil e serve para definir o diretório de trabalho para as instruções RUN, CMD, ENTRYPOINT, COPY e ADD que vêm depois dele no Dockerfile. Basicamente, ele estabelece uma base de diretório para as operações subsequentes.
+# Quando você define o WORKDIR, todas as instruções seguintes que operam em um caminho relativo serão executadas a partir desse diretório especificado. Se o diretório não existir, o Docker irá criá-lo, mesmo que ainda não esteja presente na imagem.
+# Por exemplo, se você colocar WORKDIR /app em seu Dockerfile, qualquer comando RUN, COPY, ou ADD que venha depois irá assumir que a operação deve ser feita dentro do diretório /app.
 WORKDIR /usr/src/app
 
 # copiando o arquivo origem para destino
