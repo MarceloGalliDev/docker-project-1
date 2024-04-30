@@ -166,6 +166,7 @@ docker image tag {repositorio}/{nome_tag_original} {repositorio}/{nome_tag_atual
 https://docs.docker.com/reference/dockerfile/
 https://docs.docker.com/storage/
 https://github.com/BretFisher/udemy-docker-mastery
+https://docs.docker.com/engine/swarm/services/
 
 ## Using docker-compose for create a docker image
 
@@ -182,3 +183,8 @@ WORKDIR var/www/html/themes
 RUN git clone --branch 8.x-3.x --single-branch --depth 1 https://git.drupal.org/projeto-docker && chown -R www-data:www-data bootstrap
 ```
 
+## Swarm configurations
+
+https://www.bretfisher.com/docker-swarm-firewall-ports/
+https://docs.docker.com/engine/swarm/services/
+https://get.docker.com/
