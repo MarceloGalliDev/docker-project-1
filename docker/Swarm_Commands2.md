@@ -2,9 +2,14 @@
 
 ## Scaling Out with Overlay Networking
 
+Esse comando usamos para criar uma rede no contexto de um cluster para comunicação dos containeres
+Em seguida escolhemos o tipo de driver especifico para essa rede
+```
 docker network create --driver overlay mydrupal
+```
 
 docker network ls
+
 
 docker service create --name psql --network mydrupal -e POSTGRES_PASSWORD=mypass postgres
 
