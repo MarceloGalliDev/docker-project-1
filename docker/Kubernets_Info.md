@@ -2,6 +2,9 @@
 
 K8s é um orquestrador de containeres.
 
+Referencias:
+https://kubernetes.io/docs/reference/kubectl/conventions/
+
 ### Camadas do K8s
 São separados em Pod, Controller, Service, Namespace
 
